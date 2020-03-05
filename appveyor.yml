@@ -1,4 +1,3 @@
-
 image:
   - Visual Studio 2019
 
@@ -43,22 +42,7 @@ artifacts:
   - path: dist\*
     name: wheel
 
-deploy:
-  release: pysat-v$(appveyor_build_version)
-  description: 'Wheels'
-  provider: GitHub
-  auth_token:
-    secure: 5bcqxRhhNMUnQw62ByBgL4+2tVQu2TZa0z4ZonD9Y68089PWDqsdXK5xaZ9d88mx # your encrypted token from GitHub
-  artifact: wheel          # upload all wheels to release assets
-  draft: false
-  prerelease: false
-  on:
-    branch: master                 # release from master branch only
-    APPVEYOR_REPO_TAG: true        # deploy on tag push only
-
 #on_success:
 #  You can use this step to upload your artifacts to a public website.
 #  See Appveyor's documentation for more details. Or you can simply
 #  access your wheels from the Appveyor "artifacts" tab for your build.
-
-
